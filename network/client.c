@@ -138,4 +138,5 @@ int handling(int err_chk, const int err_num, const char* message)
 	fputs(message, stderr);
 	fputc('\n', stderr);
 	exit(1);
+
 }
