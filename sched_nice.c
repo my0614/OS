@@ -144,4 +144,5 @@ free_logbuf:
         free(logbuf);
 
         exit(ret);
+
 }
