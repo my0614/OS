@@ -68,8 +68,8 @@ int main(int argc, char * argv[])
 
 		error_handling("connect() error");
 
-	
-
+	//loop
+	while(1) {
 	str_len = read(sock, message, sizeof(message)-1);
 
 	if(str_len == -1)
@@ -94,6 +94,7 @@ int main(int argc, char * argv[])
 		free(cwd);
 		closedir(dir);
 		close(sock);
+		}
 	}
 	return 0;	
 
