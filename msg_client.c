@@ -137,5 +137,6 @@ int sendMsg(char *msg, int size, char *ip, int port)
 
     sendto(sockfd, msg, size, 0, (struct sockaddr *)&sock, sizeof(sock));
     close(sockfd);
+
     return 0;
 }
