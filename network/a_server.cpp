@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
 	socklen_t clnt_addr_size;	
 
-	char message[10]= {0,};
+	char message[30]= {0,};
 
 	
 
@@ -83,10 +83,13 @@ int main(int argc, char *argv[])
 
 		error_handling("accept() error");
 		
-	
-	scanf("%s",&message);
-	write(clnt_sock, message, sizeof(message));
-
+	while(1)
+	{	
+		fgets(message,sizeof(message),stdin);
+		printf("emssage is = %s\n\n", message);
+		write(clnt_sock, message, sizeof(message));
+		//printf("message is = %s", message);
+	}
 	close(clnt_sock);
 
 	close(serv_sock);
@@ -108,4 +111,3 @@ void error_handling(char *message)
 	exit(1);
 
 }
-
